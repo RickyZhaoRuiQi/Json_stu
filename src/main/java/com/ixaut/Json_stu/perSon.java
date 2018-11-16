@@ -1,8 +1,12 @@
 package com.ixaut.Json_stu;
 
+import com.google.gson.annotations.SerializedName;
+
 public class perSon
 {
+    @SerializedName("NAME") //GSON 转换为json时，转换为大写
     private String name;
+    @SerializedName("SCHOOL")
     private String school;
     private boolean has_girlfriend;
     private double age;
