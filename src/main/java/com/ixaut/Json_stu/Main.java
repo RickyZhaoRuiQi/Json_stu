@@ -11,7 +11,8 @@ public class Main
     public static void main(String[] args)
     {
         //JsFunc();
-        createJsonMap();
+        //createJsonMap();
+        //createJsonByBean();
     }
 
     private static void JsFunc()
@@ -51,5 +52,20 @@ public class Main
         wangxiaoer.put("house",nullObj);
 
         System.out.println(new JSONObject(wangxiaoer).toString());
+    }
+
+    //通过JavaBean创建JSON
+    private static void  createJsonByBean()
+    {
+        perSon wangxiaoer = new perSon();
+        wangxiaoer.setName("王小二");
+        wangxiaoer.setAge(28.2);
+        wangxiaoer.setBirthday("1990-01-01");
+        wangxiaoer.setSchool("蓝翔");
+        wangxiaoer.setMajor(new String[]{"理发","挖掘机"});
+        wangxiaoer.setHas_girlfriend(false);
+        wangxiaoer.setCar(null);
+        wangxiaoer.setHouse(null);
+        System.out.println(new JSONObject(wangxiaoer));
     }
 }
