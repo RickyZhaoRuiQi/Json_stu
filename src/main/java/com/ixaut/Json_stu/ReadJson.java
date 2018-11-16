@@ -15,7 +15,15 @@ public class ReadJson
                 new File("wangxiaoer.json");
         String content = FileUtils.readFileToString(file);
         JSONObject sobj = new JSONObject(content);
-        System.out.println("姓名是："+sobj.getString("name"));
+
+        if(!sobj.isNull("name"))
+        {
+            System.out.println("姓名是："+sobj.getString("name"));
+        }
+        if(!sobj.isNull("nickname"))
+        {
+            System.out.println("姓名是："+sobj.getString("nickname"));
+        }
         System.out.println("年龄是："+sobj.getDouble("age"));
         System.out.println("有没有女朋友？ " + sobj.getBoolean("has_girlfriend"));
         JSONArray major = sobj.getJSONArray("major");
